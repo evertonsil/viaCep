@@ -9,8 +9,23 @@ $(document).ready(function () {
             $.ajax({
                 method: "POST",
                 url: "buscaCep.php",
-                data: { cep: cep }
+                data: { cep: cep },
+                success: function (result) {
+                    //trasnformando array em objeto
+                    result = JSON.parse(result);
+
+                    //recebendo os dados e adicionando nos campos de endereço
+                    $('#endereco').val(result.localidade);
+                    $('#bairro').val(result.bairro);
+                    $('#cidade').val(result.localidade);
+                    $('#uf').val(result.uf);
+                    $('#numero').focus();
+                },
+                error: function (textStatus, errorThrown) {
+                    console.error('Erro na requisição Ajax: ', textStatus, errorThrown);
+                }
             })
+
         }
     });
 });

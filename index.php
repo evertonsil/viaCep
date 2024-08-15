@@ -35,7 +35,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="estado" class="form-label">Estado</label>
-                    <select class="form-select">
+                    <select class="form-select" id="uf">
                         <option value="0">Selecione</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
