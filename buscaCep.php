@@ -14,4 +14,4 @@ $cep = filter_input(INPUT_POST, 'cep', FILTER_VALIDATE_REGEXP, array("options" =
 
 $address = $c->getAddress($cep);
 
-echo $address;
+echo json_encode($address);
